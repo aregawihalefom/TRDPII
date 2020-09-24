@@ -23,7 +23,7 @@ class AR():
         self.A = np.array([[800, 0, 320], [0, 800, 240], [0, 0, 1]])
 
         # 3D object to be displayed
-        self.object3D = OBJ('assets/models/wolf.obj', swapyz=True)
+        self.object3D = OBJ('assets/models/cow.obj', swapyz=True)
 
         # feature extractor and descriptor
         self.sift = cv2.xfeatures2d.SIFT_create()
@@ -53,11 +53,10 @@ class AR():
 
         cap = cv2.VideoCapture(0)
 
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 800)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 800)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1024)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1024)
 
         count = 0
-
         while True:
             # get the image
             ret, frame = cap.read()
